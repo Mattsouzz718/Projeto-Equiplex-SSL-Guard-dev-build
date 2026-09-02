@@ -1,12 +1,8 @@
 [
     {
-        "dominio": "https://equiplex.com.br/",
-        "categoria": "farmadia",
-        "email": "sac@equiplex.com.br"
+        "dominio": "www.google.com"
     },
     {
-        "dominio": "google.com",
-        "categoria": "pesq",
-        "email": "google@gmail.com"
+        "dominio": "equiplex.com.br"
     }
 ]
