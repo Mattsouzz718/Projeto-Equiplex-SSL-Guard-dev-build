@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="logo.jpg" alt="Logo Projeto Equiplex SSL Guard" width="500">
+<img src="logo.png" alt="Logo Projeto Equiplex SSL Guard" width="500">
 
 <br />
 
