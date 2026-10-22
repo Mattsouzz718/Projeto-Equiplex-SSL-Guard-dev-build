@@ -1,0 +1,6 @@
+customtkinter>=5.2.2
+requests>=2.31.0
+cryptography>=42.0.0
+pystray>=0.19.5
+Pillow>=10.0.0
+winotify>=1.1.0; platform_system == "Windows"

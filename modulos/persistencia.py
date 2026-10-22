@@ -1,36 +1,23 @@
-import json
-import os
+"""Persistência dos domínios monitorados pelo aplicativo."""
 
-ARQUIVO = 'dados.json'
+import json
+from pathlib import Path
+
+PASTA_PROJETO = Path(__file__).resolve().parent.parent
+ARQUIVO = PASTA_PROJETO / "dados.json"
+
 
 def carregar_dados():
-    # Se o arquivo não existir, retorna uma lista vazia, sem caô.
-    if not os.path.exists(ARQUIVO):
+    if not ARQUIVO.exists():
         return []
-    with open(ARQUIVO, 'r', encoding='utf-8') as f:
-        return json.load(f)
+    try:
+        with ARQUIVO.open("r", encoding="utf-8") as arquivo:
+            dados = json.load(arquivo)
+        return dados if isinstance(dados, list) else []
+    except (OSError, json.JSONDecodeError):
+        return []
+
 
 def salvar_dados(dados):
-    # Salva os bagulhos com identação pra ficar bonitinho
-    with open(ARQUIVO, 'w', encoding='utf-8') as f:
-        json.dump(dados, f, indent=4)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    with ARQUIVO.open("w", encoding="utf-8") as arquivo:
+        json.dump(dados, arquivo, indent=4, ensure_ascii=False)
